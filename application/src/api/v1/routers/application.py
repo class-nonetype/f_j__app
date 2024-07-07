@@ -1,11 +1,29 @@
 import fastapi
 import fastapi.security
-import fastapi.templating
 
-from src.core.log import log
-from src.api.v1.routers.modules.views import router as view
+from src.core.utils import API_PREFIX
+from src.api.v1.routers.modules import (
+    views,
+    authentication
+)
 
+# Mapeo: prefijo: [router].
+API_ROUTERS = {
+    'APPLICATION': [
+        views.router
+    ],
+    'AUTHENTICATION': [
+        authentication.router
+    ]
+}
 
 
 router = fastapi.APIRouter()
-router.include_router(router=view)
+
+# Itera sobre el diccionario y agrega los routers correspondientes.
+for key, values in API_ROUTERS.items():
+    for value in values:
+        router.include_router(
+            router=value,
+            prefix=API_PREFIX[key]
+        )

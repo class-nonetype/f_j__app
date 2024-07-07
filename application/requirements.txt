@@ -1,4 +1,5 @@
 uvicorn
+pydantic>=2.7.4
 fastapi
 fastapi-utils
 jinja2
@@ -7,3 +8,12 @@ colorama
 pytz
 requests
 python-dotenv
+PyJWT
+python-multipart
+load-dotenv
+sqlalchemy
+SQLAlchemy
+psycopg2-binary
+starlette
+bcrypt
+psycopg2
