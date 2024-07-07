@@ -1,0 +1,9 @@
+uvicorn
+fastapi
+fastapi-utils
+jinja2
+python-multipart
+colorama
+pytz
+requests
+python-dotenv

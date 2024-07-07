@@ -1,0 +1,15 @@
+<!-- verifier.html -->
+{% extends "base.html" %}
+{% block body %}
+
+{% block notifications %}
+  {% if notification is defined %}
+    {{ notification | safe }}
+  {% endif %}
+{% endblock %}
+
+<section class="h-100" id="section-container">
+
+</section>
+
+{% endblock %}
