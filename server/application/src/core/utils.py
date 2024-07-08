@@ -62,7 +62,7 @@ API_PORT = 80
 API_TIMEZONE = TZ
 API_PREFIX = {
     'STATIC': '/api/{0}/static'.format(API_VERSION),
-    'APPLICATION': '/api/{0}/application'.format(API_VERSION),
+    'APPLICATION': '',
     'AUTHENTICATION': '/api/{0}/authentication'.format(API_VERSION)
 }
 API_STATIC_NAME = 'static'
@@ -71,8 +71,7 @@ API_STATIC_NAME = 'static'
 STATIC_DIRECTORY = Path(os.getenv('STATIC_DIRECTORY', None))
 UPLOADS_DIRECTORY = Path(STATIC_DIRECTORY / 'uploads')
 LOG_DIRECTORY = Path(STATIC_DIRECTORY / 'logs')
-TEMPLATES_DIRECTORY = Path(Path(__file__).parent / 'templates')
-
+TEMPLATES_DIRECTORY = Path(Path(__file__).parent.parent / 'templates')
 LOG_FILE_NAME = 'events.log'
 LOG_FILE = Path(LOG_DIRECTORY / LOG_FILE_NAME)
 LOG_MESSAGE_FORMAT = '%(asctime)-20s %(levelname)-10s %(module)s.%(funcName)s: %(message)s'
